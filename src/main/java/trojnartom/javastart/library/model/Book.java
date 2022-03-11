@@ -1,32 +1,50 @@
 package trojnartom.javastart.library.model;
 
-public class Book {
+public class Book extends Publication {
 
-    String title;
     String author;
-    int releaseDate;
     int pages;
-    String publisher;
     String isbn;
 
-    public Book(String title, String author, int releaseDate, int pages, String publisher, String isbn) {
-        this (title, author, releaseDate, pages, publisher);
+    public Book(String title, String author, int year, int pages, String publisher, String isbn) {
+        this.setTitle(title);
+        this.setYear(year);
+        this.setPublisher(publisher);
+        this.author = author;
+        this.pages = pages;
         this.isbn = isbn;
     }
 
-    public Book(String title, String author, int releaseDate, int pages, String publisher) {
-        this.title = title;
-        this.author = author;
-        this.releaseDate = releaseDate;
-        this.pages = pages;
-        this.publisher = publisher;
-    }
 
     public void printInfo() {
-        String info = title + "; " + author + "; " + releaseDate + "; " + pages + "; " + publisher;
+        String info = getTitle() + "; " + author + "; " + getYear() + "; " + pages + "; " + getPublisher();
         if (isbn != null) {
             info = info + "; " + isbn;
         }
         System.out.println(info);
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public int getPages() {
+        return pages;
+    }
+
+    public void setPages(int pages) {
+        this.pages = pages;
+    }
+
+    public String getIsbn() {
+        return isbn;
+    }
+
+    public void setIsbn(String isbn) {
+        this.isbn = isbn;
     }
 }
