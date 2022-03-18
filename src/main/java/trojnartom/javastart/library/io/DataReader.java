@@ -22,7 +22,6 @@ public class DataReader {
         int releaseDate = getInt();
         System.out.println("Liczba stron: ");
         int pages = getInt();
-        sc.nextLine();
 
         return new Book(title, author, releaseDate, pages, publisher, isbn);
     }
